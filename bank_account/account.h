@@ -12,7 +12,7 @@ public:
 	void deposit(double x);
 	virtual void withdraw(double amt);
 	double balance()const;
-	virtual void Viewacct()const;
+	virtual void ViewAcct()const;
 private:
 	string name;
 	long acount_num;

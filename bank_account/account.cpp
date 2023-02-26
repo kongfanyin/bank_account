@@ -53,7 +53,7 @@ double BRASS::balance() const
 	return remain_money;
 }
 
-void BRASS::Viewacct() const
+void BRASS::ViewAcct() const
 {
 	//设置浮点输出格式
 	format initialState = setFormat();
@@ -87,8 +87,8 @@ void BRASS_PLUS::ViewAcct() const
 	precis prec = cout.precision(2);//输出格式设置为两位小数
 
 	//使用基类函数
-	BRASS::Viewacct();
-	cout << "超支利率：" << InteRating << endl;
+	BRASS::ViewAcct();
+	cout << "超支利率：" <<100* InteRating <<'%'<< endl;
 	cout<< "最大超值额度：" << maxloan << endl;
 	cout << "当前超支额度：" << NowOverdraft << endl;
 	restore(initialState,prec);
@@ -132,7 +132,6 @@ void BRASS_PLUS::resetRate(double r)
 
 format setFormat()
 {
-
 	return cout.setf(std::ios_base::fixed, std::ios_base::floatfield);
 }
 
